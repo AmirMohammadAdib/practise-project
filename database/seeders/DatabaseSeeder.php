@@ -8,6 +8,7 @@ use Database\Seeders\PermissionSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\ModelHasPermissionSeeder;
+use Database\Seeders\PostSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([UserSeeder::class ,PermissionSeeder::class, RoleSeeder::class, ModelHasPermissionSeeder::class]);
+        $this->call([UserSeeder::class, PostSeeder::class, PermissionSeeder::class, RoleSeeder::class, ModelHasPermissionSeeder::class]);
     }
 }

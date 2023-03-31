@@ -13,7 +13,7 @@ abstract class ElequentBaseRepository implements BaseRepository {
     }
 
     public function all(): Collection {
-        return $this->model->all();
+        return $this->model->orderBy("created_at", "desc")->get();
     }
     public function store(BaseDTO $dto) {
         return $this->model->create($dto->toArray());

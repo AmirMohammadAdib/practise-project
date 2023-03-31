@@ -20,6 +20,11 @@
                             {{ __('User') }}
                         </x-nav-link>
                     @endcan
+                    @can('post-view-any')
+                        <x-nav-link :href="route('post.index')" :active="request()->routeIs('post.index')">
+                            {{ __('Post') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 

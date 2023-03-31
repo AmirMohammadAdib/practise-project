@@ -19,6 +19,13 @@
                         </a>
                     </div>
                 @endcan
+                @can('post-view-any')
+                <div class="p-6 text-gray-900">
+                    <a href="{{ route('post.index') }}">
+                        Posts
+                    </a>
+                </div>
+            @endcan
             </div>
         </div>
     </div>

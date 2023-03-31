@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +36,5 @@ require __DIR__.'/auth.php';
 //admin panel
 Route::group(["prefix" => "admin", "middleware" => "check.admin"], function(){
     Route::resource("/user", UserController::class);
+    Route::resource("/post", PostController::class);
 });
