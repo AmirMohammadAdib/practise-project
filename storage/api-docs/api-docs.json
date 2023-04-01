@@ -5,6 +5,96 @@
         "version": "0.1"
     },
     "paths": {
+        "/api/v1/post": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Posts",
+                "operationId": "eaee9fa5ab200c8ffe5b90d86de17bf0",
+                "responses": {
+                    "200": {
+                        "description": "Return all Posts"
+                    },
+                    "403": {
+                        "description": "this action id Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/v1/post/{post}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Show Post",
+                "operationId": "baf761218df3533d90892fd1a7c6ea97",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "description": "You must send the post ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return a specific post"
+                    },
+                    "403": {
+                        "description": "this action id Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/v1/user": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Users",
+                "operationId": "cd657b847bd27cccecf4b00564dbf99f",
+                "responses": {
+                    "200": {
+                        "description": "Return all Users"
+                    },
+                    "403": {
+                        "description": "this action id Unauthorized"
+                    }
+                }
+            }
+        },
+        "/api/v1/user/{user}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Show User",
+                "operationId": "2d5c6f3e4267c1384fe834fb965a101d",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "path",
+                        "description": "You must send the user ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return a specific user"
+                    },
+                    "403": {
+                        "description": "this action id Unauthorized"
+                    }
+                }
+            }
+        },
         "/api/v1/auth/login": {
             "post": {
                 "tags": [
