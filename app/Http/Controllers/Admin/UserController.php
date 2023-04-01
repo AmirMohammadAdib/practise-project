@@ -36,6 +36,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
+        dd($request);
         $this->elequent_user->store($request->toDTO());
         return redirect()->route("user.index");
     }
