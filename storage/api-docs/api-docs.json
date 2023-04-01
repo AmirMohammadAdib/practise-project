@@ -1,0 +1,102 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Practise Project",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/v1/auth/login": {
+            "post": {
+                "tags": [
+                    "Authentication-system"
+                ],
+                "summary": "Login",
+                "operationId": "780c560985ffaa396d3a61c81b0a814f",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "email field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "password field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login was successful"
+                    },
+                    "401": {
+                        "description": "Login is not possible for you"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/logout": {
+            "get": {
+                "tags": [
+                    "Authentication-system"
+                ],
+                "summary": "Logout",
+                "responses": {
+                    "200": {
+                        "description": "Logout was successful"
+                    }
+                }
+            }
+        },
+        "/api/v1/auth/register": {
+            "post": {
+                "tags": [
+                    "Authentication-system"
+                ],
+                "summary": "Register",
+                "operationId": "3645743e46c9d8f5ce43d34260eef32e",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "email field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "name field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "password field",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Registration was successful"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasPermissions, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, HasPermissions, HasApiTokens;
 
     const VIEW_ANY_PERMISSION = "user-view-any";
     const VIEW_PERMISSION = "user-view";

@@ -36,7 +36,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $request->password = Hash::make($request->password);
         $this->elequent_user->store($request->toDTO());
         return redirect()->route("user.index");
     }

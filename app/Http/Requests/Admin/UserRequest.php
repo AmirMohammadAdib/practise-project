@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use App\DTO\UserDTO;
+use Hash;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
 
@@ -24,7 +25,11 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         $routeName = $this->route()->getName();
-        if (Str::contains($routeName, ["store"])) {
+
+        //hashing Password
+        $this->password = Hash::make($this->password);
+
+        if (Str::contains($routeName, ["store", "register"])) {
             return [
                 "name" => "required|string|min:3",
                 "email" => "required|email|unique:users,email",
