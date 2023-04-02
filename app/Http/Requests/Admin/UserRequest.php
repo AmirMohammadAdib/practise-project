@@ -25,15 +25,14 @@ class UserRequest extends FormRequest
     public function rules(): array
     {
         $routeName = $this->route()->getName();
-
         //hashing Password
         $this->password = Hash::make($this->password);
 
         if (Str::contains($routeName, ["store", "register"])) {
             return [
-                "name" => "required|string|min:3",
-                "email" => "required|email|unique:users,email",
-                "password" => "required|min:6|max:12",
+                "name" => "required",
+                "email" => "required",
+                "password" => "required",
             ];
         } elseif (Str::contains($routeName, ["update"])) {
             return [
