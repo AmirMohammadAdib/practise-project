@@ -30,9 +30,9 @@ class UserRequest extends FormRequest
 
         if (Str::contains($routeName, ["store", "register"])) {
             return [
-                "name" => "required",
-                "email" => "required",
-                "password" => "required",
+                "name" => "required|min:3",
+                "email" => "required|email|unique:users,email",
+                "password" => "required|min:6|max:12",
             ];
         } elseif (Str::contains($routeName, ["update"])) {
             return [
